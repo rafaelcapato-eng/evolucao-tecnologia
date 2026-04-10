@@ -1,124 +1,27 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* MENU DE ANOS */
+.menu-anos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
 }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #020617);
-    color: #e2e8f0;
-    line-height: 1.6;
-}
-
-/* HEADER */
-header {
+.ano {
+    display: block;
     text-align: center;
-    padding: 40px 20px;
-    background: #020617;
-    border-bottom: 2px solid #38bdf8;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    color: #38bdf8;
-}
-
-header p {
-    margin-top: 10px;
-    color: #94a3b8;
-}
-
-/* TIMELINE */
-.timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 40px auto;
     padding: 20px;
-}
-
-/* Linha central */
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 20px;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: #38bdf8;
-}
-
-/* EVENTOS */
-.event {
-    position: relative;
-    margin-left: 50px;
-    margin-bottom: 40px;
     background: #020617;
-    padding: 20px;
-    border-radius: 10px;
     border: 1px solid #1e293b;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Bolinha da timeline */
-.event::before {
-    content: "";
-    position: absolute;
-    left: -34px;
-    top: 20px;
-    width: 15px;
-    height: 15px;
-    background: #38bdf8;
-    border-radius: 50%;
-    border: 3px solid #020617;
-}
-
-/* Hover efeito */
-.event:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #38bdf8;
-}
-
-/* TITULOS */
-.event h2 {
+    border-radius: 10px;
     color: #38bdf8;
-    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
 }
 
-/* IMAGENS */
-.event img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    margin: 10px 0;
-    border: 2px solid #1e293b;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #020617;
-    border-top: 2px solid #38bdf8;
-    margin-top: 40px;
-    color: #94a3b8;
-}
-
-/* RESPONSIVO */
-@media (max-width: 600px) {
-    .timeline::before {
-        left: 10px;
-    }
-
-    .event {
-        margin-left: 30px;
-    }
-
-    .event::before {
-        left: -24px;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
+.ano:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #38bdf8;
 }
