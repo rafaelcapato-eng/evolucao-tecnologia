@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evolução da Tecnologia</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .video-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .video-container {
+            max-width: 560px;
+            margin: 20px auto;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+        }
+    </style>
 </head>
 <body>
 
@@ -26,7 +41,21 @@
         <a href="2020.html" class="ano">2020</a>
     </section>
 
-    <!-- Nova seção com a tabela de horários -->
+    <!-- Seção do Vídeo -->
+    <section class="video-section">
+        <h2>Vídeo: Evolução da Tecnologia</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/c6AOdvYQr8Y?si=lf05vYSTiGa68Yd5&amp;start=2" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Tabela de Horários -->
     <section class="horarios">
         <h2>Horário de Funcionamento</h2>
         <table>
@@ -37,34 +66,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Segunda-feira</td>
-                    <td>08h às 18h</td>
-                </tr>
-                <tr>
-                    <td>Terça-feira</td>
-                    <td>08h às 18h</td>
-                </tr>
-                <tr>
-                    <td>Quarta-feira</td>
-                    <td>08h às 18h</td>
-                </tr>
-                <tr>
-                    <td>Quinta-feira</td>
-                    <td>08h às 18h</td>
-                </tr>
-                <tr>
-                    <td>Sexta-feira</td>
-                    <td>08h às 18h</td>
-                </tr>
-                <tr>
-                    <td>Sábado</td>
-                    <td>08h às 13h</td>
-                </tr>
-                <tr>
-                    <td>Domingo</td>
-                    <td>Fechado</td>
-                </tr>
+                <tr><td>Segunda-feira</td><td>08h às 18h</td></tr>
+                <tr><td>Terça-feira</td><td>08h às 18h</td></tr>
+                <tr><td>Quarta-feira</td><td>08h às 18h</td></tr>
+                <tr><td>Quinta-feira</td><td>08h às 18h</td></tr>
+                <tr><td>Sexta-feira</td><td>08h às 18h</td></tr>
+                <tr><td>Sábado</td><td>08h às 13h</td></tr>
+                <tr><td>Domingo</td><td>Fechado</td></tr>
             </tbody>
         </table>
     </section>
