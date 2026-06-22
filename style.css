@@ -64,10 +64,10 @@ header p {
     border-color: #38bdf8;
 }
 
-/* SEÇÃO DO VÍDEO */
+/* SECAO DO VIDEO */
 .video-section {
     max-width: 800px;
-    margin: 60px auto;
+    margin: 0 auto 60px auto;
     padding: 35px;
     background: rgba(2, 6, 23, 0.75);
     border-radius: 16px;
@@ -101,7 +101,7 @@ header p {
     display: block;
 }
 
-/* HORÁRIOS */
+/* HORARIOS */
 .horarios {
     max-width: 700px;
     margin: 60px auto;
@@ -159,69 +159,6 @@ tr:hover {
     transition: 0.3s ease;
 }
 
-/* TIMELINE (mantido do original) */
-.timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 20px;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, #38bdf8, transparent);
-    border-radius: 10px;
-}
-
-.event {
-    position: relative;
-    margin-left: 60px;
-    margin-bottom: 40px;
-    background: rgba(2, 6, 23, 0.75);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid rgba(148, 163, 184, 0.15);
-    transition: 0.3s ease;
-    backdrop-filter: blur(8px);
-}
-
-.event::before {
-    content: "";
-    position: absolute;
-    left: -38px;
-    top: 25px;
-    width: 16px;
-    height: 16px;
-    background: #38bdf8;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
-}
-
-.event:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-color: rgba(56, 189, 248, 0.5);
-}
-
-.event h2 {
-    color: #38bdf8;
-    margin-bottom: 10px;
-}
-
-a {
-    color: #38bdf8;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 /* FOOTER */
 footer {
     text-align: center;
@@ -232,8 +169,8 @@ footer {
     color: #94a3b8;
 }
 
-/* ANIMAÇÕES */
-.event, .ano, .horarios, .video-section {
+/* ANIMACOES */
+.ano, .horarios, .video-section {
     animation: fadeUp 0.6s ease both;
 }
 
@@ -252,18 +189,6 @@ footer {
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.9rem;
-    }
-
-    .timeline::before {
-        left: 10px;
-    }
-
-    .event {
-        margin-left: 35px;
-    }
-
-    .event::before {
-        left: -28px;
     }
 
     .horarios, .video-section {
