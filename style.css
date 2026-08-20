@@ -1,3 +1,6 @@
+/* ===============================
+   RESET & BASE
+   =============================== */
 * {
     margin: 0;
     padding: 0;
@@ -5,135 +8,155 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: radial-gradient(circle at top, #0f172a, #020617);
+    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    background: radial-gradient(circle at top, #0f172a 0%, #020617 70%);
     color: #e2e8f0;
     line-height: 1.6;
     min-height: 100vh;
-}
-
-/* HEADER */
-header {
-    text-align: center;
-    padding: 50px 20px;
-    background: rgba(2, 6, 23, 0.7);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(56, 189, 248, 0.3);
-}
-
-header h1 {
-    font-size: 2.8rem;
-    color: #38bdf8;
-    text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-}
-
-header p {
-    margin-top: 10px;
-    color: #94a3b8;
-    font-size: 1.15rem;
-}
-
-/* MENU DE ANOS */
-.menu-anos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 18px;
-    max-width: 800px;
-    margin: 60px auto;
     padding: 20px;
 }
 
-.ano {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-    background: rgba(2, 6, 23,: 0.7);
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    border-radius: 12px;
-    color: #38bdf8;
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: bold;
-    transition: 0.3s ease;
-    backdrop-filter: blur(8px);
-}
-
-.ano:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
-    border-color: #38bdf8;
-}
-
-/* SEÇÃO DO VÍDEO */
-.video-section {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    padding: 35px;
-    background: rgba(2, 6, 23, 0.75);
-    border-radius: 16px;
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    text-align: center;
-}
-
-.video-section h2 {
-    color: #38bdf8;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-}
-
-.video-container {
-    position: relative;
-    max-width: 560px;
+/* ===============================
+   MAIN CONTAINER
+   =============================== */
+#conteudo-principal {
+    max-width: 900px;
     margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
-.video-container iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    display: block;
-}
-
-/* HORÁRIOS */
-.horarios {
-    max-width: 700px;
-    margin: 60px auto;
-    padding: 35px;
+/* ===============================
+   HEADER
+   =============================== */
+header {
+    text-align: center;
+    padding: 40px 25px;
     background: rgba(2, 6, 23, 0.75);
-    border-radius: 16px;
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(56, 189, 248, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 18px;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #38bdf8;
+    text-shadow: 0 0 25px rgba(56, 189, 248, 0.45);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+header label {
+    display: block;
+    color: #94a3b8;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+/* Select estilizado */
+#select-ano {
+    background: rgba(15, 23, 42, 0.8);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 160px;
+}
+
+#select-ano:hover,
+#select-ano:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+    background: rgba(56, 189, 248, 0.08);
+}
+
+/* Container de informações do ano */
+.info-ano-container {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(15, 23, 42, 0.7);
+    border-radius: 14px;
+    border-left: 5px solid #38bdf8;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.info-ano-container:hover {
+    border-left-color: #7dd3fc;
+    box-shadow: 0 10px 35px rgba(56, 189, 248, 0.15);
+}
+
+#titulo-ano {
+    color: #38bdf8;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+#descricao-ano {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+}
+
+/* ===============================
+   SEÇÕES
+   =============================== */
+section {
+    background: rgba(2, 6, 23, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 18px;
+    padding: 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     text-align: center;
 }
 
-.horarios h2 {
+section h2 {
     color: #38bdf8;
+    font-size: 1.7rem;
     margin-bottom: 25px;
-    font-size: 1.8rem;
-    text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    text-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
 }
 
-/* TABELA */
+/* Vídeo */
+iframe {
+    max-width: 100%;
+    width: 560px;
+    height: 315px;
+    border-radius: 14px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* ===============================
+   TABELA
+   =============================== */
 table {
     width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     border-collapse: collapse;
-    background: rgba(15, 23, 42, 0.6);
-    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.65);
+    border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(56, 189, 248, 0.15);
 }
 
+caption {
+    caption-side: top;
+    color: #94a3b8;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
 th, td {
-    padding: 18px 20px;
+    padding: 16px 20px;
     text-align: left;
     border-bottom: 1px solid rgba(148, 163, 184, 0.1);
 }
@@ -144,7 +167,7 @@ th {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
 }
 
 td {
@@ -152,33 +175,47 @@ td {
 }
 
 tr:nth-child(even) {
-    background: rgba(2, 6, 23, 0.5);
+    background: rgba(2, 6, 23, 0.45);
 }
 
 tr:hover {
     background: rgba(56, 189, 248, 0.1);
-    transition: 0.3s ease;
+    transition: background 0.25s ease;
 }
 
-/* FOOTER */
+/* ===============================
+   FOOTER
+   =============================== */
 footer {
     text-align: center;
     padding: 25px;
-    background: rgba(2, 6, 23, 0.7);
-    border-top: 1px solid rgba(56, 189, 248, 0.3);
-    margin-top: 50px;
     color: #94a3b8;
+    font-size: 0.95rem;
 }
 
-/* ANIMAÇÕES */
-.ano, .horarios, .video-section {
-    animation: fadeUp 0.6s ease both;
+footer a {
+    color: #38bdf8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+/* ===============================
+   ANIMAÇÕES
+   =============================== */
+header,
+section {
+    animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px);
     }
     to {
         opacity: 1;
@@ -187,52 +224,33 @@ footer {
 }
 
 /* ===============================
-   RESPONSIVO - MEDIA QUERIES
-   (conforme a atividade prática)
+   RESPONSIVO
    =============================== */
-
-/* Tablets e celulares grandes */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
 
     header {
-        padding: 35px 15px;
+        padding: 30px 20px;
     }
 
     header h1 {
         font-size: 2rem;
     }
 
-    header p {
-        font-size: 1rem;
+    section {
+        padding: 25px 20px;
     }
 
-    /* Menu se adapta melhor */
-    .menu-anos {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 12px;
-        margin: 40px 15px;
-        padding: 10px;
-    }
-
-    .ano {
-        padding: 18px;
-        font-size: 1.15rem;
-    }
-
-    /* Vídeo e horários ocupam melhor a tela */
-    .video-section,
-    .horarios {
-        margin: 40px 15px;
-        padding: 25px;
-    }
-
-    .video-section h2,
-    .horarios h2 {
+    section h2 {
         font-size: 1.45rem;
     }
 
-    .video-container {
-        max-width: 100%;
+    iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 
     th, td {
@@ -241,41 +259,30 @@ footer {
     }
 }
 
-/* Celulares pequenos */
-@media screen and (max-width: 480px) {
-
+@media (max-width: 480px) {
     header h1 {
         font-size: 1.7rem;
     }
 
-    .menu-anos {
-        grid-template-columns: 1fr 1fr; /* 2 colunas no celular */
-        gap: 10px;
+    #select-ano {
+        width: 100%;
+        max-width: 220px;
     }
 
-    .ano {
-        padding: 16px 10px;
-        font-size: 1.05rem;
+    .info-ano-container {
+        padding: 20px;
     }
 
-    .video-section,
-    .horarios {
-        margin: 30px 10px;
+    #titulo-ano {
+        font-size: 1.4rem;
+    }
+
+    section {
         padding: 20px 15px;
-    }
-
-    .video-section h2,
-    .horarios h2 {
-        font-size: 1.3rem;
     }
 
     th, td {
         padding: 12px 10px;
         font-size: 0.9rem;
-    }
-
-    footer {
-        font-size: 0.85rem;
-        padding: 18px;
     }
 }

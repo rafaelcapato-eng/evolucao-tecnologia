@@ -17,28 +17,13 @@
             margin-bottom: 30px;
         }
 
-        /* Painel de Acessibilidade */
-        .acessibilidade-container {
-            background-color: #f0f0f0;
-            padding: 15px;
+        /* Container do Ano Selecionado */
+        .info-ano-container {
+            background-color: #f9f9f9;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 20px;
             border-left: 5px solid #0056b3;
-        }
-
-        .btn-audio {
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-right: 10px;
-        }
-
-        .btn-audio:hover {
-            background-color: #003d80;
+            margin-top: 15px;
         }
 
         /* Estilização da Tabela */
@@ -62,18 +47,12 @@
 </head>
 <body>
 
-    <div class="acessibilidade-container" aria-label="Controles de Acessibilidade">
-        <h2>🔊 Acessibilidade: Leitor de Texto</h2>
-        <button class="btn-audio" onclick="lerTexto()">Ouvir Conteúdo da Página</button>
-        <button class="btn-audio" style="background-color: #c92a2a;" onclick="pararLeitura()">Parar</button>
-    </div>
-
     <main id="conteudo-principal">
         
         <header>
             <h1>Evolução da Tecnologia</h1>
             <label for="select-ano">Escolha um ano para ver as informações:</label>
-            <select id="select-ano" name="ano">
+            <select id="select-ano" name="ano" onchange="mostrarInfoAno()">
                 <option value="1940">1940</option>
                 <option value="1950">1950</option>
                 <option value="1960">1960</option>
@@ -84,6 +63,12 @@
                 <option value="2010">2010</option>
                 <option value="2020">2020</option>
             </select>
+
+            <!-- Área onde os dados do ano selecionado serão exibidos -->
+            <div id="info-ano" class="info-ano-container" aria-live="polite">
+                <h2 id="titulo-ano">1940</h2>
+                <p id="descricao-ano">Surgimento dos primeiros computadores eletromecânicos e eletrônicos, como o ENIAC e o Colossus, focados principalmente em uso militar.</p>
+            </div>
         </header>
 
         <section aria-labelledby="titulo-video">
@@ -141,33 +126,26 @@
     </footer>
 
     <script>
-        // Função para iniciar a síntese de voz
-        function lerTexto() {
-            // Verifica se o navegador suporta a API de voz
-            if ('speechSynthesis' in window) {
-                // Interrompe qualquer leitura anterior
-                window.speechSynthesis.cancel();
+        // Dados de cada década
+        const dadosDecadas = {
+            "1940": "Surgimento dos primeiros computadores eletromecânicos e eletrônicos, como o ENIAC e o Colossus, focados principalmente em uso militar.",
+            "1950": "Início do uso comercial dos computadores (UNIVAC) e invenção do transistor, substituindo as válvulas e diminuindo o tamanho dos aparelhos.",
+            "1960": "Criação dos circuitos integrados (chips) e surgimento da ARPANET, a rede ancestral da internet.",
+            "1970": "Invenção do microprocessador e surgimento dos primeiros computadores pessoais (como o Apple I e o Altair 8800).",
+            "1980": "Popularização dos computadores pessoais (PCs IBM e Macintosh), criação dos videogames modernos e ascensão dos softwares domésticos.",
+            "1990": "Nascimento e expansão da World Wide Web (WWW), surgimento dos computadores portáteis e popularização dos celulares.",
+            "2000": "Expansão da internet banda larga, surgimento das redes sociais (Orkut, Facebook) e lançamento do primeiro iPhone (2007).",
+            "2010": "Era dos smartphones, popularização do armazenamento em nuvem, serviços de streaming e avanços em inteligência artificial.",
+            "2020": "Consolidação da tecnologia 5G, automação avançada, trabalho remoto massivo e rápida evolução de modelos generativos de IA."
+        };
 
-                // Captura todo o texto contido na tag <main>
-                const texto = document.getElementById('conteudo-principal').innerText;
-                const mensagem = new SpeechSynthesisUtterance(texto);
-                
-                // Configura o idioma para Português do Brasil
-                mensagem.lang = 'pt-BR';
-                mensagem.rate = 1; // Velocidade da voz (1 é normal)
-
-                // Executa a leitura
-                window.speechSynthesis.speak(mensagem);
-            } else {
-                alert('Seu navegador não suporta a funcionalidade de leitura por voz.');
-            }
-        }
-
-        // Função para interromper a leitura
-        function pararLeitura() {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-            }
+        // Função para atualizar o conteúdo com base no ano selecionado
+        function mostrarInfoAno() {
+            const select = document.getElementById('select-ano');
+            const anoSelecionado = select.value;
+            
+            document.getElementById('titulo-ano').innerText = anoSelecionado;
+            document.getElementById('descricao-ano').innerText = dadosDecadas[anoSelecionado];
         }
     </script>
 
